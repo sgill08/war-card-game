@@ -3,12 +3,14 @@ import java.util.*;
 public class deck {
 	public static void makeAndShuffle(ArrayList<String> p, ArrayList<String> c)
 	{
+		// Creates a deck with ranking
 		int[] deck = new int[52];
 		String[] ranks = {"2","3","4","5","6","7","8","9","10","11","12","13"};
 		for(int i = 0; i < deck.length; i++)
 		{
 			deck[i] = i;
 		}
+		// sets value to each deck
 		for(int i = 0; i < 150; i++)
 		{
 			int indexVal = (int) (Math.random() * deck.length);
@@ -18,7 +20,7 @@ public class deck {
 			
 		}
 		String[] rank = new String[52];
-
+		//Assgining ranks to each card
 		for(int i = 0; i < 52; i++)
 		{
 				rank[i] = ranks[(deck[i] % 12)];
@@ -35,6 +37,7 @@ public class deck {
 			}
 		}
 	}
+	//checking cards values
 	public static String check(int a)
 	{
 		String r = "";
@@ -57,12 +60,15 @@ public class deck {
 		return r;
 		
 	}
+	//starting the game and playing it
 	public static void playGame(ArrayList<String> p, ArrayList<String> c)
 	{
+		//checking to see if we need a war situation
 		if(p.size() >= 0 || c.size() >= 0)
 		{
 			int pCard = Integer.parseInt(p.get(0));
 			int cCard = Integer.parseInt(c.get(0));
+			//checking card values
 			if(pCard > cCard)
 			{
 				if(pCard >= 10)
@@ -82,6 +88,7 @@ public class deck {
 					endGame(p,c);
 				}
 			}
+			//cehcking card values agian
 			else if(cCard > pCard)
 			{
 				if(cCard >= 10)
@@ -101,6 +108,7 @@ public class deck {
 					endGame(p,c);
 				}
 			}
+			//checking card values
 			else if(pCard == cCard)
 			{
 				war(p,c);
@@ -108,10 +116,8 @@ public class deck {
 		}
 
 	}
-	/*
-	 * Lordy lord use comments pls 
-	 * I think this starts the game
-	 */
+
+	//war situations
 	public static void war(ArrayList<String> p, ArrayList<String> c)
 	{
 		ArrayList<String> middlep = new ArrayList<String>();
