@@ -1,7 +1,7 @@
 # war-card-game
 A programmed card game based off the game war.
 ## Description
-This code is meant to run simulations of the war card game. This app includes both a player and a computer, the player will have to enter something into the console to start the game. While the computer will deal the cards and analyze the winner automaticly. This app will display the winner of each round with the values.
+This code is meant to run simulations of the war card game. This app includes both a player and a computer, the player will have to enter something into the console to start the game. While the computer will deal the cards and analyze the winner automatically. This app will display the winner of each round with the values.
 
 ## tools/tech used
 Java, eclipse
